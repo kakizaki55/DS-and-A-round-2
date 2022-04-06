@@ -63,9 +63,8 @@ console.log(queue.dequeue()); // 'llama'
 console.log(queue.hasNext()); // false
 console.log(queue.dequeue()); // null
 
-
-
-onst word1 = 'superintended';
+// Anagrams
+const word1 = 'superintended';
 const word2 = 'unpredestined';
 const word3 = 'pictorialness';
 const word4 = 'documentarily';
@@ -83,3 +82,18 @@ function anagrams(wordOne, wordTwo) {
 
 console.log(anagrams(word1, word2));
 console.log(anagrams(word3, word4));
+
+// unique Strings
+const arr1 = ['Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a']; // 'BbBb'
+const arr2 = ['abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba']; // 'foo'
+
+//trying to make this work but its not working yet
+
+function uniqueString(arr) {
+  // try #1
+  const unique = [...new Set(arr.map((item) => item.split().sort('').join()))];
+  return unique;
+}
+
+console.log(uniqueString(arr1));
+console.log(uniqueString(arr2));
